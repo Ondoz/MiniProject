@@ -11,7 +11,9 @@ class PostController extends Controller
     public function index()
     {
         $post = Post::all();
-        return response()->json($post);
+        return response([
+            'data' => $post
+        ], 200);
     }
 
     public function getItem(Request $request, Post $post)
@@ -28,7 +30,9 @@ class PostController extends Controller
             return $post->where('name',  'LIKE', '%' . $request->input('name')  . '%')->get();
         }
 
-        return $post->all();
+        return response([
+            'data' => $post
+        ], 200);
     }
 
 
@@ -56,7 +60,9 @@ class PostController extends Controller
     {
         $post = Post::where('code', $code)->first();
         if (!empty($post)) {
-            return response()->json($post);
+            return response([
+                'data' => $post
+            ], 200);
         } else {
             echo "Opps!!! Data Post Not Exist";
         }
@@ -85,6 +91,8 @@ class PostController extends Controller
     {
         $post = Post::where('code', $code)->first();
         $post->delete();
-        return response(["Successfully Delete"], 204);
+        return response([
+            'message' => 'Not Content'
+        ], 204);
     }
 }
