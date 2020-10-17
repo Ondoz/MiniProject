@@ -13,11 +13,12 @@
         
 5. php artisan migrate --seed or php artisan migrate:fresh --seed
 
-6. | method | URL | Status | Description
-| :---  |     :---:    |  :---: | --: |
-| GET   | /api/post     | 200    | show all data|
-| POST  | /api/search   | 200    | get items by code or name|
-| GET   | /api/post/{code}| 200  | get single item by code|
-| POST  | /api/post     |201     | create new item |
-| PUT   | /api/post/{code}|201   | update existing item by code|
-| DELETE| /api/post/{code}|200   | delete item|
+
+ method | URL | Status | Description
+--- | --- | --- | --- 
+ GET   | /api/post     | 200    | show all data
+ POST  | /api/search   | 200    | get items by code or name
+ GET   | /api/post/{code}| 200  | get single item by code
+ POST  | /api/post     |201     | create new item 
+ PUT   | /api/post/{code}|201   | update existing item by code
+ DELETE| /api/post/{code}|200   | delete item
